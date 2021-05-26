@@ -2,43 +2,49 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gérer la liste des Argonautes avec du CRUD</title>
-    <script type="module" src="./../index.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gérer la liste des Argonautes avec du CRUD</title>
+  <script type="module" src="./../index.js"></script>
 </head>
 
-<!-- Header section -->
-<header>
-    <h1>
-        <img src="https://www.wildcodeschool.com/assets/logo_main-e4f3f744c8e717f1b7df3858dce55a86c63d4766d5d9a7f454250145f097c2fe.png"
-            alt="Wild Code School logo" />
-        Les Argonautes
-    </h1>
-</header>
-
 <body>
-    <!-- Main section -->
-    <main>
+  <!-- Header section -->
+  <header>
+    <h1>
+      <img
+        src="https://www.wildcodeschool.com/assets/logo_main-e4f3f744c8e717f1b7df3858dce55a86c63d4766d5d9a7f454250145f097c2fe.png"
+        alt="Wild Code School logo" />
+      Les Argonautes
+    </h1>
+  </header>
 
-        <!-- New member form -->
-        {{ > add-argonaute }}
-      
+  <!-- Main section -->
+  <main>
 
-        <!-- Member list -->
-        <h2>Membres de l'équipage</h2>
-        <section class="member-list">
-            <div class="member-item">Eleftheria</div>
-            <div class="member-item">Gennadios</div>
-            <div class="member-item">Lysimachos</div>
-        </section>
-    </main>
+    <!-- New member form -->
+    <h2>Ajouter un(e) Argonaute</h2>
+    <form action="add-argonaute" method="POST" class="new-member-form">
+      <label for="name">Nom de l&apos;Argonaute</label>
+      <input id="name" name="name" type="text" placeholder="nom de l'argonaute" />
+      <button type="submit">Envoyer</button>
+    </form>
+
+
+    <!-- Member list -->
+    <h2>Membres de l'équipage</h2>
+    <section class="member-list">
+      {{#each argonautes}}
+      <div class="member-item">{{this.name}}</div>
+      {{/each}}
+    </section>
+  </main>
 </body>
 
 
 <footer>
-    <p>Réalisé par Jason en Anthestérion de l'an 515 avant JC</p>
+  <p>Réalisé par Jason en Anthestérion de l'an 515 avant JC</p>
 </footer>
 
 </html>
