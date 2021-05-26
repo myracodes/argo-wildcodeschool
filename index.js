@@ -1,3 +1,0 @@
-/**
- * @author Myriam MIRA
- */

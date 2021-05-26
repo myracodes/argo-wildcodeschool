@@ -1,0 +1,1 @@
+Voici mon exercice préparatoire pour l'entretien technique à la Wild code school.
